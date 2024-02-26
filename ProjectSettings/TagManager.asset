@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Reward
-  - coin-count
   layers:
   - Default
   - TransparentFX
@@ -13,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - room1
+  - player
   - 
   - 
   - 
