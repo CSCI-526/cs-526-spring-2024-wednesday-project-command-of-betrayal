@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class FOVMesh : MonoBehaviour
 {
-    //FOV script
+    
     FOV fov;
-
-    //Desenho
     Mesh mesh;
 
-    //acerto
     RaycastHit2D hit;
 
-    //Resolucao
     [SerializeField] float meshRes = 2;
 
-    //vertices
     [HideInInspector] public Vector3[] vertices;
 
-    //triangulacao de pontos
     [HideInInspector] public int[] triangles;
 
-    //contador de passos
     [HideInInspector] public int stepCount;
 
-
-    // Use this for initialization
     void Start()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         fov = GetComponentInParent<FOV>();
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         MakeMesh();
@@ -53,10 +43,8 @@ public class FOVMesh : MonoBehaviour
             float angle = fov.transform.eulerAngles.y - fov.viewAngle / 2 + stepAngle * i;
             Vector3 dir = fov.DirFromAngle(angle, false);
 
-            //armazena o obstaculo
             hit = Physics2D.Raycast(fov.transform.position, dir, fov.viewRadius, fov.obstacleMask);
 
-            //se o collider do obstaculo for nulo
             if (hit.collider == null)
             {
                 viewVertex.Add(transform.position + dir.normalized * fov.viewRadius);

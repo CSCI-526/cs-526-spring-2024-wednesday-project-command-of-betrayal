@@ -18,18 +18,18 @@ public class IABehavior : MonoBehaviour
     [SerializeField] float reinforcementsDetectionRadius;
     [SerializeField] LayerMask reinforcementsMask;
 
-    //cached references
+ 
     private FOV fov;
     private FOVEnemyRotation fovRotation;
 
-    //variables
+ 
     Transform[] presas;
     float step;
     bool goToPosition = false;
     Vector2 targetPosition = new Vector2();
     Behavior originalBehavior;
 
-    // Start is called before the first frame update
+  
     void Start()
     {
         fov = this.GetComponent<FOV>();
@@ -37,7 +37,7 @@ public class IABehavior : MonoBehaviour
         originalBehavior = behavior;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         step = speed * Time.deltaTime;

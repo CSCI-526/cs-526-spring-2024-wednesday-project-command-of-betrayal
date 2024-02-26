@@ -30,11 +30,16 @@ public class Playermovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         Vector2 direction = new Vector3(horizontalInput, verticalInput, 0);
         transform.Translate(direction * speed * Time.deltaTime);
-    }
 
+        
+    }
+   
     public void IncreaseCoins(int v)
     {
         currentCoins += v;
         coinText.text = "COINS:" + currentCoins.ToString();
     }
 }
+
+
+

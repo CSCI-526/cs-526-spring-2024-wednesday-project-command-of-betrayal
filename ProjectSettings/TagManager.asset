@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Reward
+  - police
   layers:
   - Default
   - TransparentFX
