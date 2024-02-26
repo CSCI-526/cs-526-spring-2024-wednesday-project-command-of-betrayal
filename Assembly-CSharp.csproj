@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8DA1C502-E9E8-7A87-3187-64F8E6582A98}</ProjectGuid>
+    <ProjectGuid>{5E0BF371-8C8E-E225-1BAA-2A487FC45870}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,7 +55,7 @@
     <UnityVersion>2022.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.18f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.18f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -63,6 +63,7 @@
     <Compile Include="Assets/Scripts/Playermovement.cs" />
     <Compile Include="Assets/Scripts/Enemyway.cs" />
     <Compile Include="Assets/Scripts/chaseplayer.cs" />
+    <Compile Include="Assets/Scripts/RewardScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
