@@ -22,7 +22,7 @@ public class Playermovement : MonoBehaviour
 
     void Start()
     {
-        coinText.text = "COINS:" + currentCoins.ToString();
+        //coinText.text = "COINS:" + currentCoins.ToString();
     } 
     void Update()
     {
@@ -37,21 +37,4 @@ public class Playermovement : MonoBehaviour
         currentCoins += v;
         coinText.text = "COINS:" + currentCoins.ToString();
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.CompareTag("Reward"))
-    //    {
-    //        Destroy(collision.gameObject);
-    //        if (scoreText != null)
-    //        {
-    //            scoreText.text = score.ToString();
-    //        }
-    //        else
-    //        {
-    //            Debug.LogWarning("scoreText is null");
-    //        }
-
-    //    }
-    //}
 }

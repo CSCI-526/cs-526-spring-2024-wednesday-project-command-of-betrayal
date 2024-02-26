@@ -7,24 +7,18 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class CoinCounter : MonoBehaviour
 {
-    public int currentCoins = 0;
-    public TMP_Text coinText;
+    private float coin = 0;
+    public TextMeshProUGUI textCoins;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        coinText.text = "COINS:" + currentCoins.ToString();
+        if(other.transform.tag == "Reward")
+        {
+            coin++;
+            textCoins.text = coin.ToString();
+
+            Destroy(other.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void IncreaseCoins(int v)
-    {
-        currentCoins += v;
-        coinText.text = "COINS:" + currentCoins.ToString();
-    }
 }
