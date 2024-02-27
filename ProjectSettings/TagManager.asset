@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Reward
   - police
+  - Square
+  - OBS
   layers:
   - Default
   - TransparentFX
