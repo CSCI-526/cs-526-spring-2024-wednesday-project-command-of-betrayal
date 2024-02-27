@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (transform.position == waypoints[waypointIndex].position)
         {
-            waypointIndex = (waypointIndex + 1) % waypoints.Length; // Loop back to the first waypoint
+            waypointIndex = (waypointIndex + 1) % waypoints.Length; 
         }
     }
 }
