@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/IABehavior.cs" />
     <Compile Include="Assets/Scripts/FOVMesh.cs" />
     <Compile Include="Assets/Scripts/Enemyway.cs" />
+    <Compile Include="Assets/Scripts/chec.cs" />
     <Compile Include="Assets/Scripts/Gameend.cs" />
     <Compile Include="Assets/Scripts/FOV.cs" />
     <Compile Include="Assets/Scripts/FOVEnemyRotation.cs" />

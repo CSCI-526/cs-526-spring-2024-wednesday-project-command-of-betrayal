@@ -9,6 +9,7 @@ TagManager:
   - Square
   - OBS
   - enter
+  - police2
   layers:
   - Default
   - TransparentFX
