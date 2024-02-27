@@ -7,7 +7,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class CoinCounter : MonoBehaviour
 {
-    private float coin = 0;
+    public float coin = 0;
     public TextMeshProUGUI textCoins;
 
     private void OnTriggerEnter2D(Collider2D other)

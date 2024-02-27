@@ -45,7 +45,6 @@ public class CollisionDetection : MonoBehaviour
             Debug.Log("Destroying other object");
             Destroy(other.gameObject);
 
-            // Enable the canvas
             if (objectToEnable != null)
             {
                 objectToEnable.SetActive(true);
