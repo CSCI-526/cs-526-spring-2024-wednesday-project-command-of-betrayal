@@ -10,6 +10,7 @@ TagManager:
   - OBS
   - enter
   - police2
+  - wall
   layers:
   - Default
   - TransparentFX

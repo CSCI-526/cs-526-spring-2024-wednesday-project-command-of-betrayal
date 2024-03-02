@@ -17,14 +17,13 @@ public class chec : MonoBehaviour
             Debug.LogWarning("CoinCounter script not found in the scene.");
         }
     }
- 
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Square"))
         {
             Debug.Log("Destroying other object");
-            objectToEnable.SetActive(true);
             Debug.Log(c.coin);
             //Destroy(other.gameObject);
             if (c != null)
@@ -33,36 +32,37 @@ public class chec : MonoBehaviour
                 if (c.coin == 2)
                 {
                     objectToEnable.SetActive(true);
-                    //GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
-                    //for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    //{
-                    //    Destroy(enemies[i]);
-                    //}
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
+                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                    {
+                        Destroy(enemies[i]);
+                    }
 
-                    //GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
-                    //for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    //{
-                    //    Destroy(enemies2[i]);
-                    //}
+                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
+                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                    {
+                        Destroy(enemies2[i]);
+                    }
                 }
-                else
+                else if (c.coin != 0 || c.coin==0)
                 {
-                    //    objectToEnableonlose.SetActive(true);
-                    //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
-                    //    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    //    {
-                    //        Destroy(enemies[i]);
-                    //    }
+                    objectToEnableonlose.SetActive(true);
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
+                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                    {
+                        Destroy(enemies[i]);
+                    }
 
-                    //    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
-                    //    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    //    {
-                    //        Destroy(enemies2[i]);
-                    //    }
+                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
+                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                    {
+                        Destroy(enemies2[i]);
+                    }
                 }
             }
             else
             {
+                objectToEnableonlose.SetActive(true);
                 Debug.LogWarning("CoinCounter script is not assigned.");
             }
         }
