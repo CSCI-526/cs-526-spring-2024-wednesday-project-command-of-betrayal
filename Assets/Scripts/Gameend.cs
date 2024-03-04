@@ -18,7 +18,7 @@ public class Gameend : MonoBehaviour
         
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-       
+        AnalyticsManager.Instance.ResetAnalyticsOnSceneLoad(); //For analytics, paste this before reloading the scene
         SceneManager.LoadScene(currentSceneIndex);
     }
 }
