@@ -33,6 +33,7 @@ public class bordercheck : MonoBehaviour
     private void ActivateCollisionDisable()
     {
         collisionActivated = true;
+        AnalyticsManager.Instance.UsedGhostMode();
         DisableCollisionForDuration();
     }
 

@@ -22,8 +22,8 @@ public class RewardScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Playermovement.instance.IncreaseCoins(value);
             Destroy(gameObject);
+            Playermovement.instance.IncreaseCoins(value); 
         }
     }
 }

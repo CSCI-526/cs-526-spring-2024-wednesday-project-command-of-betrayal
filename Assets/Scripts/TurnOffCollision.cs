@@ -22,7 +22,7 @@ public class TurnOffCollision : MonoBehaviour
     private void ActivateFeature()
     {
         SetCollisionState(true);
-        AnalyticsManager.Instance.UsedGhostMode();
+
         StartCoroutine(RevertCollisionStateAfterDelay(3f));
 
         featureActivated = true;

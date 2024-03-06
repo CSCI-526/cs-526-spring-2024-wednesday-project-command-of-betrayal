@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+//using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class CoinCounter : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class CoinCounter : MonoBehaviour
     {
         if(other.transform.tag == "Reward")
         {
-            AnalyticsManager.Instance.DiamondCollected();
             coin++;
             textCoins.text = coin.ToString();
+            AnalyticsManager.Instance.DiamondCollected();
             Destroy(other.gameObject);
         }
     }
