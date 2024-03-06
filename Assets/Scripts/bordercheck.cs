@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class bordercheck : MonoBehaviour
 {
-    public GameObject playerObject; // Reference to the player object
-    public string wallTag = "wall"; // Tag for the walls
+    public GameObject playerObject; 
+    public string wallTag = "wall"; 
     public KeyCode turnOffCollisionKey = KeyCode.T;
     public float collisionDisableDuration = 3f;
 
     private bool collisionDisabled = false;
     private float collisionDisableEndTime;
     private bool collisionActivated = false;
-    private bool collisionActivationRequested = false; // Flag to track if collision activation has been requested
+    private bool collisionActivationRequested = false;
 
     private void Update()
     {
-        // Check if T key is pressed and collision can be activated
+       
         if (Input.GetKeyDown(turnOffCollisionKey) && !collisionActivated && !collisionActivationRequested)
         {
             ActivateCollisionDisable();
-            collisionActivationRequested = true; // Mark collision activation as requested
+            collisionActivationRequested = true; 
         }
 
-        // Check if collision disable duration has elapsed
+        
         if (collisionDisabled && Time.time >= collisionDisableEndTime)
         {
             EnableCollision();
@@ -33,6 +33,7 @@ public class bordercheck : MonoBehaviour
     private void ActivateCollisionDisable()
     {
         collisionActivated = true;
+        AnalyticsManager.Instance.UsedGhostMode();
         DisableCollisionForDuration();
     }
 
@@ -41,7 +42,7 @@ public class bordercheck : MonoBehaviour
         collisionDisabled = true;
         collisionDisableEndTime = Time.time + collisionDisableDuration;
 
-        // Disable collision between player and all objects with the "Wall" tag
+        
         Collider2D[] playerColliders = playerObject.GetComponentsInChildren<Collider2D>();
         GameObject[] wallObjects = GameObject.FindGameObjectsWithTag(wallTag);
         foreach (GameObject wallObject in wallObjects)
@@ -59,7 +60,7 @@ public class bordercheck : MonoBehaviour
 
     private void EnableCollision()
     {
-        // Enable collision between player and all objects with the "Wall" tag
+        
         Collider2D[] playerColliders = playerObject.GetComponentsInChildren<Collider2D>();
         GameObject[] wallObjects = GameObject.FindGameObjectsWithTag(wallTag);
         foreach (GameObject wallObject in wallObjects)
@@ -74,7 +75,7 @@ public class bordercheck : MonoBehaviour
             }
         }
 
-        // Reset flags
+        
         collisionActivated = false;
         collisionDisabled = false;
     }

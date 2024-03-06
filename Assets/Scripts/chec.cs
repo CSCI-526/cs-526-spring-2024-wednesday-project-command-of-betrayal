@@ -32,6 +32,7 @@ public class chec : MonoBehaviour
                 if (c.coin == 2)
                 {
                     objectToEnable.SetActive(true);
+                    AnalyticsManager.Instance.WonGame();
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
                     for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
                     {
