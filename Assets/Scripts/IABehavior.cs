@@ -92,7 +92,10 @@ public class IABehavior : MonoBehaviour
         {
             fovRotation.enabled = false;
         }
-
+        if (TutorialManager.Instance.tKeyPressed)
+        {
+            TutorialManager.Instance.EnableTextThree();
+        }
         Vector2 playerPos = presas[0].transform.position - transform.position;
         float angle = Mathf.Atan2(playerPos.y, playerPos.x) * Mathf.Rad2Deg;
 

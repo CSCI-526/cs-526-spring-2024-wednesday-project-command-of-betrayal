@@ -17,8 +17,9 @@ public class Gameend : MonoBehaviour
     {
         
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
+        Time.timeScale = 1f;
         AnalyticsManager.Instance.ResetAnalyticsOnSceneLoad();
+        TutorialManager.Instance.ReloadSingleton();
         SceneManager.LoadScene(currentSceneIndex);
     }
 }

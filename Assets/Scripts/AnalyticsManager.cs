@@ -81,6 +81,7 @@ public class AnalyticsManager : MonoBehaviour
 
     public void WonGame()
     {
+        TutorialManager.Instance.EnableTextSix();
         gameWon = true;
         SendEndAnalyticsData();
     }
@@ -99,6 +100,7 @@ public class AnalyticsManager : MonoBehaviour
     private void CollectSecondDiamond()
     {
         diamondTwoCollected = true;
+        TutorialManager.Instance.EnableTextFive();
     }
     private void SendEndAnalyticsData()
     {
@@ -130,5 +132,4 @@ public class AnalyticsManager : MonoBehaviour
             }
         }
     }
-// this is the analytics code
 }
