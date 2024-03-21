@@ -130,4 +130,5 @@ public class AnalyticsManager : MonoBehaviour
             }
         }
     }
+// this is the analytics code
 }
