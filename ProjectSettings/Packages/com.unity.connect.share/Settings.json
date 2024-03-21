@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/ishaanmandliya/Downloads/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/new-build;/Users/ayushyelne/Desktop/Command of betrayal;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"E:/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/Build;/Users/ayushyelne/Desktop/Command of betrayal;;;;;;;;\"}"
             }
         ]
     }
