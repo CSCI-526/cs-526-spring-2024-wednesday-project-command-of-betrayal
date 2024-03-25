@@ -12,6 +12,10 @@ public class bordercheck : MonoBehaviour
     private bool collisionDisabled = false;
     private float collisionDisableEndTime;
     private bool collisionActivated = false;
+    private SpriteRenderer spriteRenderer;
+    public Color ghostColor = Color.white; // Set the new color in the inspector
+    public Color normalColor = Color.blue; // Set the new color in the inspector
+
     private bool collisionActivationRequested = false; // Flag to track if collision activation has been requested
 
     private void Update()
@@ -32,8 +36,19 @@ public class bordercheck : MonoBehaviour
 
     private void ActivateCollisionDisable()
     {
+
         collisionActivated = true;
         AnalyticsManager.Instance.UsedGhostMode();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = ghostColor;
+        }
+        else
+        {
+            Debug.LogWarning("No SpriteRenderer component found on the GameObject.");
+        }
         DisableCollisionForDuration();
     }
 
@@ -73,6 +88,18 @@ public class bordercheck : MonoBehaviour
                     Physics2D.IgnoreCollision(playerCollider, wallCollider, false);
                 }
             }
+        }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            // Change the color of the GameObject
+            spriteRenderer.color = normalColor;
+        }
+        else
+        {
+            Debug.LogWarning("No SpriteRenderer component found on the GameObject.");
         }
 
         // Reset flags
