@@ -72,6 +72,7 @@
     <Compile Include="Assets/Scripts/Enemyway.cs" />
     <Compile Include="Assets/Scripts/TutorialManager.cs" />
     <Compile Include="Assets/Scripts/chec.cs" />
+    <Compile Include="Assets/Scripts/camfollow.cs" />
     <Compile Include="Assets/Scripts/NavigateTo.cs" />
     <Compile Include="Assets/Scripts/Gameend.cs" />
     <Compile Include="Assets/Scripts/TutorialManagerBak.cs" />
