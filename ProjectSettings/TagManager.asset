@@ -11,6 +11,8 @@ TagManager:
   - enter
   - police2
   - wall
+  - blue portal
+  - orange portal
   layers:
   - Default
   - TransparentFX

@@ -16,8 +16,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject Stage5Instructions;
     public GameObject Stage6Instructions;
     public Button continueButton;
-    public GameObject blurCamObj; // Reference to the BlurCam camera
-    public GameObject labelUI; // Reference to the LabelUI GameObject
+    public GameObject blurCamObj; 
+    public GameObject labelUI; 
 
     public TextMeshProUGUI scoreObject;
 
@@ -26,7 +26,6 @@ public class TutorialManager : MonoBehaviour
     private bool inputReceived = false;
     private TutorialStage currentStage;
 
-    // Enum to represent different stages of the tutorial
     private enum TutorialStage
     {
         Movement,
@@ -47,7 +46,7 @@ public class TutorialManager : MonoBehaviour
 
     void PauseGameWithBlur()
     {
-        Time.timeScale = 0f; // Pause the game when it starts
+        Time.timeScale = 0f; 
         blurCamObj.SetActive(true);
         labelUI.SetActive(false);
         isPaused = true;
@@ -58,12 +57,11 @@ public class TutorialManager : MonoBehaviour
     {
         isPaused = false;
         instructionsCanvas.SetActive(false);
-        Time.timeScale = 1f; // Resume the game
+        Time.timeScale = 1f; 
         blurCamObj.SetActive(false);
-        labelUI.SetActive(true); // Enable LabelUI
+        labelUI.SetActive(true); 
         inputReceived = false;
 
-        // Move to the next stage
         switch (currentStage)
         {
             case TutorialStage.Movement:
@@ -123,13 +121,10 @@ public class TutorialManager : MonoBehaviour
         // Debug.Log("In Update");
         // Debug.Log("Is Paused:" + isPaused + "inputReceived+ " + inputReceived);
 
-        // Check if the game is paused and input hasn't been received yet
         if (isPaused && !inputReceived)
         {
-            // Check for input based on current stage
             switch (currentStage)
             {
-                // For these stages, continue game on any arrow key press
                 case TutorialStage.Movement:
                 case TutorialStage.CollectDiamond:
                 case TutorialStage.CollectDiamond2:
@@ -145,7 +140,6 @@ public class TutorialManager : MonoBehaviour
                     }
                     break;
 
-                // For GhostAbility stage, continue game on T key press
                 case TutorialStage.GhostAbility:
                     if (Input.GetKeyDown(KeyCode.T))
                     {
@@ -157,17 +151,14 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            // Additional game logic if needed
         }
         // Debug.Log(currentStage == TutorialStage.CollectDiamond && scoreObject.text == "1");
-        // Check if score becomes 1 for CollectDiamond stage
         if (currentStage == TutorialStage.CollectDiamond && scoreObject.text == "1")
         {
             currentStage = TutorialStage.GhostAbility;
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage, GhostStage, 0.5f));
         }
 
-        // Check if score becomes 2 for CollectDiamond2 stage
         if (currentStage == TutorialStage.CollectDiamond2 && scoreObject.text == "2")
         {
             currentStage = TutorialStage.Finish;

@@ -5,14 +5,13 @@ using System;
 
 public class AwakeManager : MonoBehaviour
 {
-public static AwakeManager Instance { get; private set; } // Singleton instance
+public static AwakeManager Instance { get; private set; } 
 void Awake()
     {
-        // Implementing the singleton pattern
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scenes
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
