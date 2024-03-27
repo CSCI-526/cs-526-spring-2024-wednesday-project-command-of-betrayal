@@ -6,7 +6,7 @@ public class chec : MonoBehaviour
 {
     public GameObject objectToEnable;
     public GameObject objectToEnableonlose;
-
+    public GameObject objectToDestroyOnCollision; 
     CoinCounter c;
 
     private void Start()
@@ -18,14 +18,14 @@ public class chec : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Square"))
         {
             Debug.Log("Destroying other object");
-            Debug.Log(c.coin);
             //Destroy(other.gameObject);
+            Destroy(objectToDestroyOnCollision); 
+
             if (c != null)
             {
                 Debug.Log(c.coin);
@@ -45,7 +45,7 @@ public class chec : MonoBehaviour
                         Destroy(enemies2[i]);
                     }
                 }
-                else if (c.coin != 0 || c.coin==0)
+                else if (c.coin != 0 || c.coin == 0)
                 {
                     objectToEnableonlose.SetActive(true);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
