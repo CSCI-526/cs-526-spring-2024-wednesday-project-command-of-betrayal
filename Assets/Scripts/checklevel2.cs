@@ -7,6 +7,10 @@ public class checklevel2 : MonoBehaviour
     public GameObject objectToEnable;
     public GameObject objectToEnableonlose;
 
+   
+    public GameObject[] objectsToDestroyOnWin;
+    public GameObject[] objectsToDestroyOnLose;
+
     CoinCounter c;
 
     private void Start()
@@ -18,46 +22,32 @@ public class checklevel2 : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Square"))
         {
             Debug.Log("Destroying other object");
-            Debug.Log(c.coin);
-            //Destroy(other.gameObject);
             if (c != null)
             {
-                Debug.Log(c.coin);
                 if (c.coin == 3)
                 {
                     objectToEnable.SetActive(true);
                     AnalyticsManager.Instance.WonGame();
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
-                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    {
-                        Destroy(enemies[i]);
-                    }
 
-                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
-                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                  
+                    foreach (GameObject obj in objectsToDestroyOnWin)
                     {
-                        Destroy(enemies2[i]);
+                        Destroy(obj);
                     }
                 }
-                else if (c.coin != 0 || c.coin == 0)
+                else
                 {
                     objectToEnableonlose.SetActive(true);
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
-                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
-                    {
-                        Destroy(enemies[i]);
-                    }
 
-                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("police2");
-                    for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
+                    
+                    foreach (GameObject obj in objectsToDestroyOnLose)
                     {
-                        Destroy(enemies2[i]);
+                        Destroy(obj);
                     }
                 }
             }
