@@ -2,17 +2,21 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class AnalyticsManager : MonoBehaviour
 {
-    public static AnalyticsManager Instance { get; private set; } 
+    public static AnalyticsManager Instance { get; private set; } // Singleton instance
 
+    // Google Form URL and field names
     private const string formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScFhWT_BFBHzBmJufmesR7FrUbq2D7bttCGJB0hdYKIOZXr9A/formResponse";
     // private const string formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScIHVahCdPvuCaiNaUCMBBZ3irn0guQQZe4J-hhxoVl-xyGCQ/formResponse";
     private const string sessionIDFieldName = "entry.1425437715";
     private const string sessionStartFieldName = "entry.1537180872";
+    private const string levelNumberFieldName = "entry.1026027667";
     private const string diamondOneCollectedFieldName = "entry.1666743395";
     private const string diamondTwoCollectedFieldName = "entry.1627429180";
+    private const string diamondThreeCollectedFieldName = "entry.1908770607";
     private const string gameLostFieldName = "entry.654633359";
     private const string gameWonFieldName = "entry.1719582203";
     private const string usedGhostModeFIeldName = "entry.1781204333";
@@ -32,11 +36,12 @@ public class AnalyticsManager : MonoBehaviour
     private string sessionID;
     private bool diamondOneCollected = false;
     private bool diamondTwoCollected = false;
+    private bool diamondThreeCollected = false;
     private bool gameWon = false;
     private bool gameLost = false;
     private bool usedGhostMode = false;
 
-    private int diamondsCollected = 0; 
+    private int diamondsCollected = 0; // Counter for diamonds collected
 
     private DateTime startTime;
     private DateTime diamondOneTime;
@@ -44,10 +49,11 @@ public class AnalyticsManager : MonoBehaviour
 
     void Awake()
     {
+        // Implementing the singleton pattern
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject); // Persist across scenes
         }
         else
         {
@@ -56,20 +62,25 @@ public class AnalyticsManager : MonoBehaviour
     }
     void Start()
     {
+        // Generate a random session ID
         sessionID = System.Guid.NewGuid().ToString();
         Debug.Log(sessionID);
         startTime = DateTime.Now;
 
     }
+    //Call these public methods at specific required places only
     public void ResetAnalyticsOnSceneLoad()
     {
+        // Reset all analytics variables
         diamondOneCollected = false;
         diamondTwoCollected = false;
+        diamondThreeCollected = false;
         gameWon = false;
         gameLost = false;
         usedGhostMode = false;
         diamondsCollected = 0;
 
+        // Generate a new session ID for the new game session
         sessionID = Guid.NewGuid().ToString();
         startTime = DateTime.Now;
     }
@@ -83,16 +94,31 @@ public class AnalyticsManager : MonoBehaviour
 
         if (diamondsCollected == 1)
         {
+            // First diamond collected
             diamondOneTime = DateTime.Now;
             CollectFirstDiamond();
             Debug.Log("Diamond 1 Collected!");
         }
         else if (diamondsCollected == 2)
         {
+            // Second diamond collected
             diamondTwoTime = DateTime.Now;
             CollectSecondDiamond();
             Debug.Log("Diamond 2 Collected!");
         }
+        else if (diamondsCollected == 3)
+        {
+            // Second diamond collected
+            // diamondThreeTime = DateTime.Now;
+            CollectThirdDiamond();
+            Debug.Log("Diamond 3 Collected!");
+        }
+    }
+
+    private void CollectThirdDiamond()
+    {
+        diamondThreeCollected = true;
+        // throw new NotImplementedException();
     }
 
     public void WonGame()
@@ -106,6 +132,7 @@ public class AnalyticsManager : MonoBehaviour
         gameLost = true;
         SendEndAnalyticsData();
     }
+    //Public Methods Ends
     private void CollectFirstDiamond()
     {
         diamondOneCollected = true;
@@ -117,7 +144,12 @@ public class AnalyticsManager : MonoBehaviour
     }
     private void SendEndAnalyticsData()
     {
-        StartCoroutine(PostEndGameData());
+        // Debug.Log(SceneManager.GetActiveScene());
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene")){
+            Debug.Log(SceneManager.GetActiveScene());
+            StartCoroutine(PostEndGameData());
+        }
+        
     }
 
     IEnumerator PostEndGameData()
@@ -129,9 +161,11 @@ public class AnalyticsManager : MonoBehaviour
 
         WWWForm form = new WWWForm();
         form.AddField(sessionIDFieldName, sessionID);
-        form.AddField(sessionStartFieldName, "1"); 
+        form.AddField(sessionStartFieldName, "1"); // Assuming session start is always 1
+        form.AddField(levelNumberFieldName, SceneManager.GetActiveScene().name); // Assuming session start is always 1
         form.AddField(diamondOneCollectedFieldName, diamondOneCollected ? "1" : "0");
         form.AddField(diamondTwoCollectedFieldName, diamondTwoCollected ? "1" : "0");
+        form.AddField(diamondThreeCollectedFieldName, diamondThreeCollected ? "1" : "0");
         form.AddField(gameWonFieldName, gameWon ? "1" : "0");
         form.AddField(gameLostFieldName, gameLost ? "1" : "0");
         form.AddField(usedGhostModeFIeldName, usedGhostMode ? "1" : "0");
@@ -145,9 +179,9 @@ public class AnalyticsManager : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Post(formURL, form))
         {
-            yield return 0;
+            yield return www.SendWebRequest();
 
-            if (www.result != 0)
+            if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError("Error sending analytics data: " + www.error);
             }
