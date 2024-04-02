@@ -17,8 +17,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject Stage5Instructions;
     public GameObject Stage6Instructions;
     public Button continueButton;
-    public GameObject blurCamObj; 
-    public GameObject labelUI; 
+    public GameObject blurCamObj;
+    public GameObject labelUI;
 
     public TextMeshProUGUI scoreObject;
 
@@ -48,7 +48,7 @@ public class TutorialManager : MonoBehaviour
 
     void PauseGameWithBlur()
     {
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         blurCamObj.SetActive(true);
         labelUI.SetActive(false);
         isPaused = true;
@@ -113,7 +113,8 @@ public class TutorialManager : MonoBehaviour
         SetInstructions(text);
     }
 
-    void stageDeactivate(GameObject stage){
+    void stageDeactivate(GameObject stage)
+    {
         stage.SetActive(false);
     }
 
@@ -171,6 +172,9 @@ public class TutorialManager : MonoBehaviour
         {
             currentStage = TutorialStage.Finish;
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage2, "You can use teleport loop to escape", 0.5f));
+            Debug.Log("Tutorial Done from TutManager");
+            AnalyticsManager.Instance.DestroyInstance();
+            LevelManager.Instance.TutorialDone();
         }
     }
 

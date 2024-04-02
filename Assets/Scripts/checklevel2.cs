@@ -33,8 +33,8 @@ public class checklevel2 : MonoBehaviour
                 {
                     objectToEnable.SetActive(true);
                     AnalyticsManager.Instance.WonGame();
+                    // LevelManager.Instance.CompleteLevel(2);
 
-                  
                     foreach (GameObject obj in objectsToDestroyOnWin)
                     {
                         Destroy(obj);

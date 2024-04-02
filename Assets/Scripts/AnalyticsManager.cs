@@ -28,7 +28,7 @@ public class AnalyticsManager : MonoBehaviour
     // private const string gameWonFieldName = "entry.114316415";
     // private const string usedGhostModeFIeldName = "entry.2012665187";
 
-    // private const string timeToWinFieldName = "entry.1915734830";
+    private const string timeToWinFieldName = "entry.1803839025";
     // private const string timeToCollectFirstDiamondFieldName = "entry.632710935";
     // private const string timeToCollectSecondDiamondFieldName = "entry.662346092";
     // private const string timeBetweenDiamondsFieldName = "entry.24591028";
@@ -49,6 +49,8 @@ public class AnalyticsManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("AWAKEN ANALYTICS");
+
         // Implementing the singleton pattern
         if (Instance == null)
         {
@@ -66,6 +68,15 @@ public class AnalyticsManager : MonoBehaviour
         sessionID = System.Guid.NewGuid().ToString();
         Debug.Log(sessionID);
         startTime = DateTime.Now;
+        diamondOneCollected = false;
+        diamondTwoCollected = false;
+        diamondThreeCollected = false;
+        gameWon = false;
+        gameLost = false;
+        usedGhostMode = false;
+        diamondsCollected = 0;
+
+        Debug.Log("STARTING ANALYTICS");
 
     }
     //Call these public methods at specific required places only
@@ -145,11 +156,27 @@ public class AnalyticsManager : MonoBehaviour
     private void SendEndAnalyticsData()
     {
         // Debug.Log(SceneManager.GetActiveScene());
-        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene")){
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+        {
             Debug.Log(SceneManager.GetActiveScene());
             StartCoroutine(PostEndGameData());
         }
-        
+
+    }
+
+    public void DestroyInstance()
+    {
+        // Destroy the singleton instance
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            Instance = null;
+        }
+    }
+
+    public void Update()
+    {
+        Debug.Log("Won: " + gameWon + " Lost: " + gameLost);
     }
 
     IEnumerator PostEndGameData()
@@ -171,7 +198,7 @@ public class AnalyticsManager : MonoBehaviour
         form.AddField(usedGhostModeFIeldName, usedGhostMode ? "1" : "0");
 
         // Add time measurements
-        // form.AddField(timeToWinFieldName, (int)timeToWin.TotalSeconds);
+        form.AddField(timeToWinFieldName, (int)timeToWin.TotalSeconds);
         // form.AddField(timeToCollectFirstDiamondFieldName, (int)timeToCollectFirstDiamond.TotalSeconds);
         // form.AddField(timeToCollectSecondDiamondFieldName, (int)timeToCollectSecondDiamond.TotalSeconds);
         // form.AddField(timeBetweenDiamondsFieldName, (int)timeBetweenDiamonds.TotalSeconds);

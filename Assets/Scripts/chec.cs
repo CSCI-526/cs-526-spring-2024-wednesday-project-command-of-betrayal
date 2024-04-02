@@ -33,6 +33,7 @@ public class chec : MonoBehaviour
                 {
                     objectToEnable.SetActive(true);
                     AnalyticsManager.Instance.WonGame();
+                    // LevelManager.Instance.CompleteLevel(1);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
                     for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
                     {
