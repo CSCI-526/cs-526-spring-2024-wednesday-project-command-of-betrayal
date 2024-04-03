@@ -29,12 +29,12 @@ public class checklevel2 : MonoBehaviour
             Debug.Log("Destroying other object");
             if (c != null)
             {
-                if (c.coin == 3)
+                if (c.coin == 0)
                 {
                     objectToEnable.SetActive(true);
                     AnalyticsManager.Instance.WonGame();
+                    // LevelManager.Instance.CompleteLevel(2);
 
-                  
                     foreach (GameObject obj in objectsToDestroyOnWin)
                     {
                         Destroy(obj);

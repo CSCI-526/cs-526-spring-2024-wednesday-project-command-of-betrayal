@@ -443,7 +443,6 @@ GameObject:
   - component: {fileID: 368734959}
   - component: {fileID: 368734958}
   - component: {fileID: 368734957}
-  - component: {fileID: 368734960}
   m_Layer: 0
   m_Name: L2
   m_TagString: Untagged
@@ -515,7 +514,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 368734960}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -565,18 +564,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368734954}
   m_CullTransparentMesh: 1
---- !u!114 &368734960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368734954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &410893073
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +710,6 @@ GameObject:
   - component: {fileID: 660249198}
   - component: {fileID: 660249197}
   - component: {fileID: 660249196}
-  - component: {fileID: 660249199}
   m_Layer: 0
   m_Name: L1
   m_TagString: Untagged
@@ -795,7 +781,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 660249199}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -845,18 +831,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660249194}
   m_CullTransparentMesh: 1
---- !u!114 &660249199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660249194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &669638827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +977,6 @@ GameObject:
   - component: {fileID: 682204356}
   - component: {fileID: 682204355}
   - component: {fileID: 682204354}
-  - component: {fileID: 682204357}
   m_Layer: 0
   m_Name: L5
   m_TagString: Untagged
@@ -1075,7 +1048,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 682204357}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -1125,18 +1098,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682204351}
   m_CullTransparentMesh: 1
---- !u!114 &682204357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682204351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &701263782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,7 +1543,6 @@ GameObject:
   - component: {fileID: 843913926}
   - component: {fileID: 843913925}
   - component: {fileID: 843913924}
-  - component: {fileID: 843913927}
   m_Layer: 0
   m_Name: L6
   m_TagString: Untagged
@@ -1654,7 +1614,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843913927}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -1704,18 +1664,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843913921}
   m_CullTransparentMesh: 1
---- !u!114 &843913927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843913921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &844677961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1885,6 @@ GameObject:
   - component: {fileID: 949215967}
   - component: {fileID: 949215966}
   - component: {fileID: 949215965}
-  - component: {fileID: 949215968}
   m_Layer: 0
   m_Name: L4
   m_TagString: Untagged
@@ -2009,7 +1956,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 949215968}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -2059,18 +2006,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949215962}
   m_CullTransparentMesh: 1
---- !u!114 &949215968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949215962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1034745034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,7 +2111,6 @@ GameObject:
   - component: {fileID: 1128385682}
   - component: {fileID: 1128385681}
   - component: {fileID: 1128385680}
-  - component: {fileID: 1128385683}
   m_Layer: 0
   m_Name: L3
   m_TagString: Untagged
@@ -2248,7 +2182,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1128385683}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -2298,18 +2232,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128385677}
   m_CullTransparentMesh: 1
---- !u!114 &1128385683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128385677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1214675987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2241,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214675988}
-  - component: {fileID: 1214675989}
   m_Layer: 0
   m_Name: LevelMenu
   m_TagString: Untagged
@@ -2352,18 +2273,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1214675989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214675987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1287440761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,15 +2358,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1287440767}
-        m_TargetAssemblyTypeName: LevelNavigator, Assembly-CSharp
-        m_MethodName: GoBack
-        m_Mode: 1
+        m_TargetAssemblyTypeName: NavigateTo, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1287440765
@@ -2507,9 +2416,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287440761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8553e9fd519f34874b062c423cf2e4a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ee7d44cd3d5f41f8994725958d7e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1614532443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614532445}
+  - component: {fileID: 1614532444}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1614532444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614532443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49677b4b7ec614f53b14cd9935afd5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonPrefix: L
+  ScenePrefix: Level_
+--- !u!4 &1614532445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614532443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 837.184, y: 458.01242, z: -4.877911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657956179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,3 +2605,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1034745037}
   - {fileID: 78355719}
+  - {fileID: 1614532445}

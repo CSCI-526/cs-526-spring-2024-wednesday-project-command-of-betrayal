@@ -7,14 +7,14 @@ using UnityEngine;
 
 public class CoinCounter : MonoBehaviour
 {
-    public int coin = 0;
+    public int coin = 2;
     public TextMeshProUGUI textCoins;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.transform.tag == "Reward")
         {
-            coin++;
+            coin--;
             textCoins.text = coin.ToString();
             AnalyticsManager.Instance.DiamondCollected();
             Destroy(other.gameObject);

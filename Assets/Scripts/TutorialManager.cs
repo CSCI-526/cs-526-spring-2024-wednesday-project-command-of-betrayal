@@ -12,12 +12,13 @@ public class TutorialManager : MonoBehaviour
     public GameObject MovementStage;
     public GameObject DiamondStage;
     public GameObject GhostStage;
+    public GameObject teleportsign;
     public GameObject DiamondStage2;
     public GameObject Stage5Instructions;
     public GameObject Stage6Instructions;
     public Button continueButton;
-    public GameObject blurCamObj; 
-    public GameObject labelUI; 
+    public GameObject blurCamObj;
+    public GameObject labelUI;
 
     public TextMeshProUGUI scoreObject;
 
@@ -33,6 +34,7 @@ public class TutorialManager : MonoBehaviour
         GhostAbility,
         GhostAbility2,
         CollectDiamond2,
+        Teleport,
         Finish
     }
 
@@ -46,7 +48,7 @@ public class TutorialManager : MonoBehaviour
 
     void PauseGameWithBlur()
     {
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         blurCamObj.SetActive(true);
         labelUI.SetActive(false);
         isPaused = true;
@@ -57,9 +59,9 @@ public class TutorialManager : MonoBehaviour
     {
         isPaused = false;
         instructionsCanvas.SetActive(false);
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         blurCamObj.SetActive(false);
-        labelUI.SetActive(true); 
+        labelUI.SetActive(true);
         inputReceived = false;
 
         switch (currentStage)
@@ -75,15 +77,21 @@ public class TutorialManager : MonoBehaviour
             case TutorialStage.GhostAbility:
                 Debug.Log("GhostAbility");
                 currentStage = TutorialStage.GhostAbility2;
-                StartCoroutine(ShowInstructionsAfterDelay(GhostStage, "You can only use the Ghost ability Once", 1f));
+                StartCoroutine(ShowInstructionsAfterDelay(GhostStage, "Ghost ability can be used once for 3 seconds", 1f));
                 break;
             case TutorialStage.GhostAbility2:
                 currentStage = TutorialStage.CollectDiamond2;
-                StartCoroutine(ShowInstructionsAfterDelay(GhostStage,DiamondStage2, 1f));
+                StartCoroutine(ShowInstructionsAfterDelay(GhostStage, DiamondStage2, 1f));
+                break;
+
+            case TutorialStage.Teleport:
+
+                StartCoroutine(ShowInstructionsAfterDelay(teleportsign, "Teleport to another location", 1f));
                 break;
             case TutorialStage.CollectDiamond2:
                 stageDeactivate(DiamondStage2);
                 break;
+
             case TutorialStage.Finish:
                 // StartCoroutine(ShowInstructionsAfterDelay("Well Done! Now go to Exit", 2f));
                 break;
@@ -106,7 +114,8 @@ public class TutorialManager : MonoBehaviour
         SetInstructions(text);
     }
 
-    void stageDeactivate(GameObject stage){
+    void stageDeactivate(GameObject stage)
+    {
         stage.SetActive(false);
     }
 
@@ -130,6 +139,7 @@ public class TutorialManager : MonoBehaviour
                 case TutorialStage.CollectDiamond2:
                 case TutorialStage.GhostAbility2:
                 case TutorialStage.Finish:
+                case TutorialStage.Teleport:
                     if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||
                         Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) ||
                         Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
@@ -159,10 +169,13 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage, GhostStage, 0.5f));
         }
 
-        if (currentStage == TutorialStage.CollectDiamond2 && scoreObject.text == "2")
+        if (currentStage == TutorialStage.CollectDiamond2 && scoreObject.text == "0")
         {
             currentStage = TutorialStage.Finish;
-            StartCoroutine(ShowInstructionsAfterDelay(DiamondStage2, "Well Done! Now escape through EXIT", 0.5f));
+            StartCoroutine(ShowInstructionsAfterDelay(DiamondStage2, "You can use teleport loop to escape", 0.5f));
+           
+            AnalyticsManager.Instance.DestroyInstance();
+            LevelManager.Instance.TutorialDone();
         }
     }
 

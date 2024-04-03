@@ -6,7 +6,10 @@ public class chec : MonoBehaviour
 {
     public GameObject objectToEnable;
     public GameObject objectToEnableonlose;
-    public GameObject objectToDestroyOnCollision; 
+    public GameObject objectToDestroyOnCollision;
+    public GameObject canvasToTurnOff;
+    public GameObject canvasToTurnOff2;
+    public GameObject canvasToTurnOff3;
     CoinCounter c;
 
     private void Start()
@@ -29,10 +32,17 @@ public class chec : MonoBehaviour
             if (c != null)
             {
                 Debug.Log(c.coin);
-                if (c.coin == 2)
+                if (c.coin == 0)
                 {
                     objectToEnable.SetActive(true);
+
+
+                    canvasToTurnOff.SetActive(false);
+                    canvasToTurnOff2.SetActive(false);
+                    canvasToTurnOff3.SetActive(false);
+
                     AnalyticsManager.Instance.WonGame();
+                    // LevelManager.Instance.CompleteLevel(1);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
                     for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
                     {
@@ -45,9 +55,12 @@ public class chec : MonoBehaviour
                         Destroy(enemies2[i]);
                     }
                 }
-                else if (c.coin != 0 || c.coin == 0)
+                else if (c.coin >0)
                 {
                     objectToEnableonlose.SetActive(true);
+                    canvasToTurnOff.SetActive(false);
+                    canvasToTurnOff2.SetActive(false);
+                    canvasToTurnOff3.SetActive(false);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
                     for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
                     {
