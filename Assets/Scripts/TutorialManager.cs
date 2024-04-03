@@ -85,6 +85,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case TutorialStage.Teleport:
+
                 StartCoroutine(ShowInstructionsAfterDelay(teleportsign, "Teleport to another location", 1f));
                 break;
             case TutorialStage.CollectDiamond2:
@@ -168,11 +169,11 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage, GhostStage, 0.5f));
         }
 
-        if (currentStage == TutorialStage.CollectDiamond2 && scoreObject.text == "2")
+        if (currentStage == TutorialStage.CollectDiamond2 && scoreObject.text == "0")
         {
             currentStage = TutorialStage.Finish;
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage2, "You can use teleport loop to escape", 0.5f));
-            Debug.Log("Tutorial Done from TutManager");
+           
             AnalyticsManager.Instance.DestroyInstance();
             LevelManager.Instance.TutorialDone();
         }
