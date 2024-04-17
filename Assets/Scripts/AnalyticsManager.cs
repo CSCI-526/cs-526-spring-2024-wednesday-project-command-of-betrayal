@@ -27,7 +27,7 @@ public class AnalyticsManager : MonoBehaviour
     // private const string gameLostFieldName = "entry.880444437";
     // private const string gameWonFieldName = "entry.114316415";
     // private const string usedGhostModeFIeldName = "entry.2012665187";
-
+    private const string usedTeleportFieldName = "entry.1478696011";
     private const string timeToWinFieldName = "entry.1803839025";
     // private const string timeToCollectFirstDiamondFieldName = "entry.632710935";
     // private const string timeToCollectSecondDiamondFieldName = "entry.662346092";
@@ -40,6 +40,7 @@ public class AnalyticsManager : MonoBehaviour
     private bool gameWon = false;
     private bool gameLost = false;
     private bool usedGhostMode = false;
+    private bool usedTeleport = false;
 
     private int diamondsCollected = 0; // Counter for diamonds collected
 
@@ -74,6 +75,7 @@ public class AnalyticsManager : MonoBehaviour
         gameWon = false;
         gameLost = false;
         usedGhostMode = false;
+        usedTeleport = false;
         diamondsCollected = 0;
 
         Debug.Log("STARTING ANALYTICS");
@@ -89,6 +91,7 @@ public class AnalyticsManager : MonoBehaviour
         gameWon = false;
         gameLost = false;
         usedGhostMode = false;
+        usedTeleport = false;
         diamondsCollected = 0;
 
         // Generate a new session ID for the new game session
@@ -98,6 +101,10 @@ public class AnalyticsManager : MonoBehaviour
     public void UsedGhostMode()
     {
         usedGhostMode = true;
+    }
+    public void UsedTeleport()
+    {
+        usedTeleport = true;
     }
     public void DiamondCollected()
     {
@@ -196,6 +203,7 @@ public class AnalyticsManager : MonoBehaviour
         form.AddField(gameWonFieldName, gameWon ? "1" : "0");
         form.AddField(gameLostFieldName, gameLost ? "1" : "0");
         form.AddField(usedGhostModeFIeldName, usedGhostMode ? "1" : "0");
+        form.AddField(usedTeleportFieldName, usedTeleport ? "1" : "0");
 
         // Add time measurements
         form.AddField(timeToWinFieldName, (int)timeToWin.TotalSeconds);

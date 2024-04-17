@@ -467,7 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7739eb5fb9b4c462a9d3e5fb775dcbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
 --- !u!114 &33743367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1959,7 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6200d8c476354e8a97b88e69c77d517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOrange: 1
+  isOrange: 0
   distance: 0.2
 --- !u!50 &178883471
 Rigidbody2D:

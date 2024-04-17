@@ -33,6 +33,7 @@ public class Teleport : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, collision.transform.position) > distance)
             {
+                AnalyticsManager.Instance.UsedTeleport();
                 collision.transform.position = new Vector2(destination.position.x, destination.position.y);
             }
         }
