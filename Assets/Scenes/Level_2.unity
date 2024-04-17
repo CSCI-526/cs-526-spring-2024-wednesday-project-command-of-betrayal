@@ -2101,6 +2101,7 @@ GameObject:
   - component: {fileID: 355805345}
   - component: {fileID: 355805344}
   - component: {fileID: 355805343}
+  - component: {fileID: 355805348}
   m_Layer: 0
   m_Name: orange
   m_TagString: orange portal
@@ -2115,7 +2116,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355805342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6200d8c476354e8a97b88e69c77d517, type: 3}
   m_Name: 
@@ -2251,6 +2252,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355805348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355805342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecdccfc44f6846b8a8262e12a12827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 1360121207}
+  distance: 0.2
 --- !u!1 &359955055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +6704,7 @@ GameObject:
   - component: {fileID: 1360121205}
   - component: {fileID: 1360121204}
   - component: {fileID: 1360121203}
+  - component: {fileID: 1360121208}
   m_Layer: 0
   m_Name: blue
   m_TagString: blue portal
@@ -6703,7 +6719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360121202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6200d8c476354e8a97b88e69c77d517, type: 3}
   m_Name: 
@@ -6839,6 +6855,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1360121208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360121202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecdccfc44f6846b8a8262e12a12827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 355805347}
+  distance: 0.2
 --- !u!1 &1429974445
 GameObject:
   m_ObjectHideFlags: 0
