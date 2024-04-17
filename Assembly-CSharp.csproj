@@ -84,6 +84,7 @@
     <Compile Include="Assets/Scripts/chaseplayer.cs" />
     <Compile Include="Assets/Scripts/CoinCounter.cs" />
     <Compile Include="Assets/Scripts/waypoints.cs" />
+    <Compile Include="Assets/Scripts/Teleport2way.cs" />
     <Compile Include="Assets/Scripts/Rotate.cs" />
     <Compile Include="Assets/Scripts/LevelManagerBak.cs" />
     <Compile Include="Assets/Scripts/CollisionDetection.cs" />

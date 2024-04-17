@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6200d8c476354e8a97b88e69c77d517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOrange: 0
+  isOrange: 1
   distance: 0.2
 --- !u!50 &178883471
 Rigidbody2D:

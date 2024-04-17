@@ -2,30 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleport : MonoBehaviour
+public class Teleport2way : MonoBehaviour
 {
-    private Transform destination;
-
-    public bool isOrange;
+    public Transform destination;
     public float distance = 0.2f;
-
-
-    void Start()
-    {
-        if (isOrange == false)
-        {
-            destination = GameObject.FindGameObjectWithTag("orange portal").GetComponent<Transform>();
-        }
-        else
-        {
-            destination = GameObject.FindGameObjectWithTag("blue portal").GetComponent<Transform>();
-        }
-    }
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,9 +13,12 @@ public class Teleport : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, collision.transform.position) > distance)
             {
+                AnalyticsManager.Instance.UsedTeleport();
                 collision.transform.position = new Vector2(destination.position.x, destination.position.y);
             }
         }
     }
 }
+
+
 
