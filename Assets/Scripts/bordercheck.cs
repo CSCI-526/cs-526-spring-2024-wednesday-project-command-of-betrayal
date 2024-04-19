@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; // Include the TextMeshPro namespace
 
-public class bordercheck : MonoBehaviour
+public class BorderCheck : MonoBehaviour
 {
-    public GameObject playerObject; 
-    public string wallTag = "wall"; 
+    public GameObject playerObject;
+    public string wallTag = "wall";
     public KeyCode turnOffCollisionKey = KeyCode.T;
     public float collisionDisableDuration = 3f;
 
@@ -13,17 +14,19 @@ public class bordercheck : MonoBehaviour
     private float collisionDisableEndTime;
     private bool collisionActivated = false;
     private SpriteRenderer spriteRenderer;
-    public Color ghostColor = Color.white; 
-    public Color normalColor = Color.blue; 
+    public Color ghostColor = Color.white;
+    public Color normalColor = Color.blue;
 
-    private bool collisionActivationRequested = false; 
+    private bool collisionActivationRequested = false;
+
+    public TextMeshProUGUI statusText; // Reference to the TextMeshPro object
 
     private void Update()
     {
         if (Input.GetKeyDown(turnOffCollisionKey) && !collisionActivated && !collisionActivationRequested)
         {
             ActivateCollisionDisable();
-            collisionActivationRequested = true; 
+            collisionActivationRequested = true;
         }
 
         if (collisionDisabled && Time.time >= collisionDisableEndTime)
@@ -34,7 +37,6 @@ public class bordercheck : MonoBehaviour
 
     private void ActivateCollisionDisable()
     {
-
         collisionActivated = true;
         AnalyticsManager.Instance.UsedGhostMode();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,6 +49,13 @@ public class bordercheck : MonoBehaviour
         {
             Debug.LogWarning("No SpriteRenderer component found on the GameObject.");
         }
+
+        // Update TextMeshPro text
+        if (statusText != null)
+        {
+            statusText.text = "0";
+        }
+
         DisableCollisionForDuration();
     }
 
@@ -95,6 +104,12 @@ public class bordercheck : MonoBehaviour
         else
         {
             Debug.LogWarning("No SpriteRenderer component found on the GameObject.");
+        }
+
+        // Update TextMeshPro text
+        if (statusText != null)
+        {
+            statusText.text = "0";
         }
 
         collisionActivated = false;
