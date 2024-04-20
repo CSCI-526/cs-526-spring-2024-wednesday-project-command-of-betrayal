@@ -7,9 +7,14 @@ public class chec : MonoBehaviour
     public GameObject objectToEnable;
     public GameObject objectToEnableonlose;
     public GameObject objectToDestroyOnCollision;
-    public GameObject canvasToTurnOff;
-    public GameObject canvasToTurnOff2;
-    public GameObject canvasToTurnOff3;
+    //public GameObject canvasToTurnOff;
+    //public GameObject canvasToTurnOff2;
+    //public GameObject canvasToTurnOff3;
+
+
+    //public GameObject canvasToTurnOff11;
+    //public GameObject canvasToTurnOff21;
+    //public GameObject canvasToTurnOff31;
     CoinCounter c;
 
     private void Start()
@@ -37,9 +42,14 @@ public class chec : MonoBehaviour
                     objectToEnable.SetActive(true);
 
 
-                    canvasToTurnOff.SetActive(false);
-                    canvasToTurnOff2.SetActive(false);
-                    canvasToTurnOff3.SetActive(false);
+                    //canvasToTurnOff.SetActive(false);
+                    //canvasToTurnOff2.SetActive(false);
+                    //canvasToTurnOff3.SetActive(false);
+
+
+                    //canvasToTurnOff11.SetActive(false);
+                    //canvasToTurnOff21.SetActive(false);
+                    //canvasToTurnOff31.SetActive(false);
 
                     AnalyticsManager.Instance.WonGame();
                     // LevelManager.Instance.CompleteLevel(1);
@@ -58,9 +68,13 @@ public class chec : MonoBehaviour
                 else if (c.coin >0)
                 {
                     objectToEnableonlose.SetActive(true);
-                    canvasToTurnOff.SetActive(false);
-                    canvasToTurnOff2.SetActive(false);
-                    canvasToTurnOff3.SetActive(false);
+                    //canvasToTurnOff.SetActive(false);
+                    //canvasToTurnOff2.SetActive(false);
+                    //canvasToTurnOff3.SetActive(false);
+
+                    //canvasToTurnOff11.SetActive(false);
+                    //canvasToTurnOff21.SetActive(false);
+                    //canvasToTurnOff31.SetActive(false);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("police");
                     for (int i = 0; i < Mathf.Min(2, enemies.Length); i++)
                     {
