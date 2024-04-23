@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
 
     public bool isOrange;
     public float distance = 0.2f;
+    public GameObject diamond2Gameobject;
 
 
     void Start()
@@ -34,6 +35,7 @@ public class Teleport : MonoBehaviour
             if (Vector2.Distance(transform.position, collision.transform.position) > distance)
             {
                 collision.transform.position = new Vector2(destination.position.x, destination.position.y);
+                Destroy(diamond2Gameobject);
             }
         }
     }

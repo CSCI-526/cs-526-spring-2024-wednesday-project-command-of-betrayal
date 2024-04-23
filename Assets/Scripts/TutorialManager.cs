@@ -110,6 +110,7 @@ public class TutorialManager : MonoBehaviour
     {
         lastStage.SetActive(false);
         yield return new WaitForSeconds(delay);
+        lastStage.SetActive(false);
         PauseGameWithBlur();
         SetInstructions(text);
     }
@@ -173,7 +174,6 @@ public class TutorialManager : MonoBehaviour
         {
             currentStage = TutorialStage.Finish;
             StartCoroutine(ShowInstructionsAfterDelay(DiamondStage2, "You can use teleport loop to escape", 0.5f));
-           
             AnalyticsManager.Instance.DestroyInstance();
             LevelManager.Instance.TutorialDone();
         }

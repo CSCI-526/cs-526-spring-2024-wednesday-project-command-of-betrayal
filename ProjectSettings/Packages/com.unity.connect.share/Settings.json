@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/ayushyelne/Desktop/devgame/gold final;/Users/ishaanmandliya/Documents/Beta-prototype-build;/Users/ishaanmandliya/Downloads/test-build;/Users/roy/Desktop/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/WebGL Builds;/Users/ishaanmandliya/Downloads/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/new-build;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/ishaanmandliya/Documents/webgl-gold;/Users/ayushyelne/Desktop/devgame/gold final;/Users/ishaanmandliya/Documents/Beta-prototype-build;/Users/ishaanmandliya/Downloads/test-build;/Users/roy/Desktop/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/WebGL Builds;/Users/ishaanmandliya/Downloads/cs-526-spring-2024-wednesday-project-command-of-betrayal__new/new-build;;;;\"}"
             }
         ]
     }
