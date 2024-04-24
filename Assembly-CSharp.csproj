@@ -75,6 +75,7 @@
     <Compile Include="Assets/Scripts/Teleport2way.cs" />
     <Compile Include="Assets/Scripts/LevelManagerBak.cs" />
     <Compile Include="Assets/Scripts/boundary.cs" />
+    <Compile Include="Assets/Scripts/TutorialUpdate.cs" />
     <Compile Include="Assets/Scripts/Blur.cs" />
     <Compile Include="Assets/Scripts/IABehavior.cs" />
     <Compile Include="Assets/Scripts/bordercheck.cs" />
